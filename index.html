@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini portfólio DevStart</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="assets/imagens/logo-favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header class="topo">
+            <div> <!--Assim ficou bom??? Em questão de semântica eu falo-->
+                <nav>
+                    <a class="link" href="#">Home</a>
+                    <span>/</span>
+                    <a class="link" href="#">Projects</a>
+                    <span>/</span>
+                    <a class="link" href="#">Articles</a>
+                    <span>/</span>
+                    <a class="link" href="#">Contact</a>
+                </nav>
+                <div>
+                    <strong id="nome">Walison José</strong>
+                    <img src="assets/imagens/foto-pessoal-projeto.png" alt="Foto de Walison José"> <!--Seria interessante deixar dentro de uma tag figure??-->
+                </div>
+            </div>
+            <div id="titulo">
+                <h1>Portfólio Developer</h1>
+                    <p>Hello, World! Seja muito bem-vindo ao meu portfólio!!</p>
+            </div>
+        </header>
+        <main class="conteudo">
+            <section>
+                <div class="fundocard">
+                    <article class="card borda">
+                        <h2>Projects</h2>
+                            <ul>
+                                <li class="lista comborda"><a class="link" href="https://github.com/Walisonjos3" target="_blank" rel="noopener noreferrer">HTML do portfólio</a></li>
+                                <li class="lista comborda"><a class="link" href="https://github.com/Walisonjos3" target="_blank" rel="noopener noreferrer">Calculadora</a></li>
+                                <li class="lista comborda"><a class="link" href="https://github.com/Walisonjos3" target="_blank" rel="noopener noreferrer">Quiz App</a></li>
+                                <li class="lista semborda">Banco Financeiro</li>
+                            </ul>
+                    </article>
+                    <article class="card borda">
+                        <h2>Experiência de trabalho</h2>
+                            <p>Atualmente estou desenvolvendo projetos para portfólio profissional enquanto estudo os conceitos básicos de programação para aplicar em vagas de trabalho.</p>
+                            <a class="link especial" href="https://github.com/Walisonjos3" target="_blank" rel="noopener noreferrer">Visite meu GitHub</a>
+                    </article>
+                    <article class="card">
+                        <h2>Faculdade</h2>
+                            <p>Atualmente faço faculdade de Análise e Desenvolvimento de Sistemas(ADS) No 
+                                <strong><a 
+                                    class="link" 
+                                    href="https://maps.app.goo.gl/bW7AcavgQ7KovTZJ6" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer">Centro Universitário de Patos</a></strong></p> <!--É interessante fazer isso??? Colocar uma tag a dentro de uma tag strong??-->
+                            <p>Aqui aprendo:</p>
+                                <ul>
+                                    <li class="lista bolinha">Contruir sistemas completos;</li>
+                                    <li class="lista bolinha">Como montar minha prórpia startup do zero;</li>
+                                    <li class="lista bolinha">Fundamentos financeiros para gerenciar impressas;</li>
+                                    <li class="lista bolinha">ETC...</li>
+                                </ul>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <aside class="comentarios"> <!--Para dividir os conteúdos, dicidi que usaria o aside para fazer isso, é o certo?? Ou seria melhor deixar tudo dentro do main??-->
+                    <h2>Reviews do meu Professor</h2>
+                <div id="cards">
+                    <article class="cardcomentarios">
+                            <p>Walison é um aluno brilhante e tenho certeza que será um grande desenvolvendor.</p>
+                            <div> <!--Coloquei essa div para quando dar o gap no css, os dois parágrafos ficarem juntos. Era a melhor maneira de fazer isso??-->
+                                <p><strong>Jane Doe</strong></p>
+                                <p>Professor Assistente</p>
+                            </div>
+                    </article>
+                    <article class="cardcomentarios">
+                        <p>Gosto bastante de como o Walison aprende e se dedica para aprender cada vez mais as tecnologias. Vejo que ele tem bastante potencial de ser um grande desenvolvendor.</p>
+                        <div> <!--Coloquei essa div para quando dar o gap no css, os dois parágrafos ficarem juntos. Era a melhor maneira de fazer isso??-->
+                            <p><strong>Jane Doe</strong></p> <!--Seria melhor deixar somente o strong??-->
+                            <p>Professor Assistente</p>
+                        </div>
+                    </article>
+                    <article class="cardcomentarios">
+                        <p>O Walison é um aluno que tem muita vontade a prender as tecnologias e desenvolver sistemas completos.</p>
+                        <div> <!--Coloquei essa div para quando dar o gap no css, os dois parágrafos ficarem juntos. Era a melhor maneira de fazer isso??-->
+                            <p><strong>Jane Doe</strong></p>
+                            <p>Professor Assistente</p>
+                        </div>
+                    </article>
+                </div>
+        </aside>
+        <footer class="rodape">
+            <span>&copy;all rights reserved 2025</span>
+        </footer>
+    </div>
+</body>
+</html>
