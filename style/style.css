@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    text-align: justify; /*Seria interessante fazer isso??*/
+}
+
+.container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #000000;
+}
+
+.topo {
+    padding: 30px;
+    border-bottom: 3px solid #000000;
+}
+
+.topo #titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.topo nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.topo div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+img {
+    border-radius: 16px;
+}
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid #000000;
+}
+
+.fundocard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 30px;
+    flex: 1;
+    gap: 16px;
+}
+
+.card.borda {
+    border-right: 3px solid #000000;
+    
+}
+
+.comentarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 30px;
+    gap: 8px;
+}
+
+#cards {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    
+}
+
+.cardcomentarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 10px;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    padding: 24px;
+
+}
+
+.lista {
+    margin-left: 20px;
+    list-style-type: none;
+}
+
+.lista.comborda {
+    border-bottom: 3px solid #000000;
+}
+
+.lista.semborda {
+    border-bottom: 0px;
+}
+
+.lista.bolinha {
+    list-style-type: square;
+}
+
+.link {
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+.link.especial {
+    color: #0000ff;
+}
+
+#nome {
+    font-size: x-large;
+}
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    padding: 50px;
+}
