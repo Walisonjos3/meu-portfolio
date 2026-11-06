@@ -8,92 +8,91 @@
     <link rel="shortcut icon" href="assets/imagens/logo-favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
+    <div class="pagina">
         <header class="topo">
-            <div> <!--Assim ficou bom??? Em questão de semântica eu falo-->
-                <nav>
-                    <a class="link" href="#">Home</a>
-                    <span>/</span>
-                    <a class="link" href="#">Projects</a>
-                    <span>/</span>
-                    <a class="link" href="#">Articles</a>
-                    <span>/</span>
-                    <a class="link" href="#">Contact</a>
-                </nav>
-                <div>
-                    <strong id="nome">Walison José</strong>
-                    <img src="assets/imagens/foto-pessoal-projeto.png" alt="Foto de Walison José"> <!--Seria interessante deixar dentro de uma tag figure??-->
-                </div>
-            </div>
-            <div id="titulo">
-                <h1>Portfólio Developer</h1>
-                    <p>Hello, World! Seja muito bem-vindo ao meu portfólio!!</p>
-            </div>
+            <nav id="navegacao">
+                <ul id="menu">
+                    <li><a class="link" href="#inicio">Início</a></li>
+                    <li><a class="link" href="#sobre">Sobre</a></li>
+                    <li><a class="link" href="#projetos">Portfólio</a></li>
+                    <li><a class="link" href="#contato">Contato</a></li>
+                </ul>
+            </nav>
         </header>
-        <main class="conteudo">
+        <main class="container">
+            <section id="inicio">
+                <article class="card">
+                    <h1>Desenvolvedor</h1>
+                    <h2 class="textoDestaque">Full-stack</h2>
+                    <p>Desenvolvo sistemas completos e com interfaces modernas, rápidas e acessíveis, focadas em mobilidade digital, desempenho e experiências humanas que realmente resolvem problemas.</p>
+                </article>
+            </section>
+            <div id="foto-pessoal">
+                <img src="assets/imagens/foto-pessoal.png" alt="Foto pessoal de Walison José.">
+            </div>
+            <section id="sobre">
+                <article class="card">
+                    <h2 class="sub-titulo">Sobre mim</h2>
+                    <p>Olá! Sou estudante de Análise e Desenvolvimento de Sistemas e entusiasta da criação de soluções tecnológicas focadas em resolver problemas reais. Possuo cerca de 8 meses de experiência prática no desenvolvimento de projetos utilizando Java e Python, unindo a robustez do back-end a uma visão integrada do ciclo de vida do software. Atualmente, também aprofundo meus conhecimentos em Front-end com HTML5, CSS3, JavaScript e prototipagem de interfaces no Figma, buscando minha primeira oportunidade profissional como desenvolvedor Back-end ou Full-Stack.</p>
+                </article>
+            </section>
+            <section id="projetos">
+                <article class="card">
+                    <h2 class="sub-titulo">Meus Projetos</h2>
+                        <div class="card-projeto">
+                            <div>
+                                <img src="assets/imagens/carregando-projeto.webp" alt="Imagem relório.">
+                                <h3>Loja de Carros</h3>
+                                <p>Em breve...</p>
+                            </div>
+                            <div>
+                                <img src="assets/imagens/carregando-projeto.webp" alt="Imagem relório.">
+                                <h3>Página de Vendas</h3>
+                                <p>Em breve...</p>
+                            </div>
+                            <div>
+                                <img src="assets/imagens/carregando-projeto.webp" alt="Imagem relório.">
+                                <h3>Página Microsoft</h3>
+                                <p>Em breve...</p>
+                            </div>
+                        </div>
+                </article>
+            </section>
             <section>
-                <div class="fundocard">
-                    <article class="card borda">
-                        <h2>Projects</h2>
-                            <ul>
-                                <li class="lista comborda"><a class="link" href="https://github.com/Walisonjos3" target="_blank" rel="noopener noreferrer">HTML do portfólio</a></li>
-                                <li class="lista comborda"><a class="link" href="https://github.com/Walisonjos3" target="_blank" rel="noopener noreferrer">Calculadora</a></li>
-                                <li class="lista comborda"><a class="link" href="https://github.com/Walisonjos3" target="_blank" rel="noopener noreferrer">Quiz App</a></li>
-                                <li class="lista semborda">Banco Financeiro</li>
-                            </ul>
-                    </article>
-                    <article class="card borda">
-                        <h2>Experiência de trabalho</h2>
-                            <p>Atualmente estou desenvolvendo projetos para portfólio profissional enquanto estudo os conceitos básicos de programação para aplicar em vagas de trabalho.</p>
-                            <a class="link especial" href="https://github.com/Walisonjos3" target="_blank" rel="noopener noreferrer">Visite meu GitHub</a>
-                    </article>
-                    <article class="card">
-                        <h2>Faculdade</h2>
-                            <p>Atualmente faço faculdade de Análise e Desenvolvimento de Sistemas(ADS) No 
-                                <strong><a 
-                                    class="link" 
-                                    href="https://maps.app.goo.gl/bW7AcavgQ7KovTZJ6" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer">Centro Universitário de Patos</a></strong></p> <!--É interessante fazer isso??? Colocar uma tag a dentro de uma tag strong??-->
-                            <p>Aqui aprendo:</p>
-                                <ul>
-                                    <li class="lista bolinha">Contruir sistemas completos;</li>
-                                    <li class="lista bolinha">Como montar minha prórpia startup do zero;</li>
-                                    <li class="lista bolinha">Fundamentos financeiros para gerenciar impressas;</li>
-                                    <li class="lista bolinha">ETC...</li>
-                                </ul>
-                    </article>
-                </div>
+                <article>
+                    <h2 class="sub-titulo">Certificados</h2>
+                    <div class="certificado">
+
+                    </div>
+                    <div class="certificado">
+
+                    </div>
+                    <div class="certificado">
+
+                    </div>
+                </article>
             </section>
         </main>
-        <aside class="comentarios"> <!--Para dividir os conteúdos, dicidi que usaria o aside para fazer isso, é o certo?? Ou seria melhor deixar tudo dentro do main??-->
-                    <h2>Reviews do meu Professor</h2>
-                <div id="cards">
-                    <article class="cardcomentarios">
-                            <p>Walison é um aluno brilhante e tenho certeza que será um grande desenvolvendor.</p>
-                            <div> <!--Coloquei essa div para quando dar o gap no css, os dois parágrafos ficarem juntos. Era a melhor maneira de fazer isso??-->
-                                <p><strong>Jane Doe</strong></p>
-                                <p>Professor Assistente</p>
-                            </div>
-                    </article>
-                    <article class="cardcomentarios">
-                        <p>Gosto bastante de como o Walison aprende e se dedica para aprender cada vez mais as tecnologias. Vejo que ele tem bastante potencial de ser um grande desenvolvendor.</p>
-                        <div> <!--Coloquei essa div para quando dar o gap no css, os dois parágrafos ficarem juntos. Era a melhor maneira de fazer isso??-->
-                            <p><strong>Jane Doe</strong></p> <!--Seria melhor deixar somente o strong??-->
-                            <p>Professor Assistente</p>
-                        </div>
-                    </article>
-                    <article class="cardcomentarios">
-                        <p>O Walison é um aluno que tem muita vontade a prender as tecnologias e desenvolver sistemas completos.</p>
-                        <div> <!--Coloquei essa div para quando dar o gap no css, os dois parágrafos ficarem juntos. Era a melhor maneira de fazer isso??-->
-                            <p><strong>Jane Doe</strong></p>
-                            <p>Professor Assistente</p>
-                        </div>
-                    </article>
-                </div>
-        </aside>
+        <script src="script/script.js"></script>
         <footer class="rodape">
-            <span>&copy;all rights reserved 2025</span>
+            <section id="contato">
+                <h2 class="sub-titulo">Contatos</h2>
+                <form>
+                    <label for="nome" class="label">Nome</label>
+
+                    <div class="card-form">
+                        <input 
+                            type="text"
+                            id="nome"
+                            class="input"
+                            placeholder="Digite seu nome"
+                            >
+                    </div>
+                    <div class="card-form">
+                        <textarea name="" id=""></textarea>
+                    </div>
+                </form>
+            </section>
         </footer>
     </div>
 </body>
