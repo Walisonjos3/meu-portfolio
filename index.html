@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini portfólio DevStart</title>
+    <title>Portfólio</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="shortcut icon" href="assets/imagens/logo-favicon.ico" type="image/x-icon">
 </head>
@@ -38,11 +38,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icone-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10" /></svg>
                             </a>
 
-
-
-
-                            <!-- Ajeitar o email!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                            <a href=""> 
+                            <a href="mailto:Meuemail128@gmail.com" aria-label="Acessar email de Walison José."> 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icone-email"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></svg>
                             </a>
                             
@@ -198,12 +194,25 @@
                     <h2 class="sub-titulo">Entre em Contato</h2>
                     <form class="formulario" onsubmit="enviarWhatsApp(event)"> <!--onsubmit para verificar se o botão foi clicado e o formulario foi enviado.-->
                         <div class="grupo-form">
-                            <input placeholder="Nome" class="campo-form" id="input-nome">
+                            <input 
+                                placeholder="Nome" 
+                                class="campo-form" 
+                                id="input-nome"
+                                required>
                         </div>
                         <div class="grupo-form">
-                            <textarea placeholder="Digite sua mensagem" class="campo-form" rows="4"></textarea>
+                            <textarea 
+                                placeholder="Digite sua mensagem" 
+                                class="campo-form" 
+                                id="texto-mensagem" 
+                                rows="4"
+                                required
+                            ></textarea>
                         </div>
-                        <button type="submit" class="botao-enviar" id="texto-mensagem">Enviar via WhatsApp</button>
+                        <button 
+                            type="submit" 
+                            class="botao-enviar" 
+                        >Enviar via WhatsApp</button>
                     </form>
                 </article>
             </section>

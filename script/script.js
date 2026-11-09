@@ -9,6 +9,6 @@ function enviarWhatsApp(event) { // Função para verificar o click do botao.
     const texto = `Olá! Me chamo ${inputNome}, ${textoMensagem}.`; //Mensagem que vai ser enviada para o número.
     const mensagemFormatada = encodeURIComponent(texto); //Mensagem formatada para aceitar espaços.
 
-    const url = `https://wa.me/${telefone}/?t=${mensagemFormatada}`; // url da minha mensagem.
+    const url = `https://wa.me/${telefone}?text=${mensagemFormatada}`; // url da minha mensagem.
     window.open(url, '_blank') // Isso vai abrir a url em uma nova janela.
 }
