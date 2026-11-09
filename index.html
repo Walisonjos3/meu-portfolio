@@ -12,7 +12,7 @@
     
     <div class="pagina">
         <header class="topo">
-            <nav id="navegacao">
+            <nav id="navegacao"> <!--Queria que ficasse do mesmo tamanho do body, ou você acha que ficou legal assim?-->
                 <ul id="menu">
                     <li><a class="link" href="#inicio">Início</a></li>
                     <li><a class="link" href="#sobre">Sobre</a></li>
@@ -196,14 +196,14 @@
             <section id="contato" class="fundo-card">
                 <article class="card">
                     <h2 class="sub-titulo">Entre em Contato</h2>
-                    <form class="formulario">
+                    <form class="formulario" onsubmit="enviarWhatsApp(event)"> <!--onsubmit para verificar se o botão foi clicado e o formulario foi enviado.-->
                         <div class="grupo-form">
-                            <input placeholder="Nome" class="campo-form">
+                            <input placeholder="Nome" class="campo-form" id="input-nome">
                         </div>
                         <div class="grupo-form">
                             <textarea placeholder="Digite sua mensagem" class="campo-form" rows="4"></textarea>
                         </div>
-                        <button type="submit" class="botao-enviar">Enviar via WhatsApp</button>
+                        <button type="submit" class="botao-enviar" id="texto-mensagem">Enviar via WhatsApp</button>
                     </form>
                 </article>
             </section>
