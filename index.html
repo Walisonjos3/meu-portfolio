@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="assets/imagens/logo-favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <div class="particulas"></div>
+    
     <div class="pagina">
         <header class="topo">
             <nav id="navegacao">
@@ -190,27 +192,23 @@
                 </article>
             </section> -->
         </main>
-        <script src="script/script.js"></script>
-        <footer class="rodape">
+        <footer>
             <section id="contato" class="fundo-card">
-                <h2 class="sub-titulo">Contatos</h2>
-                <form>
-                    <label for="nome" class="label">Nome</label>
-
-                    <div class="card-form">
-                        <input 
-                            type="text"
-                            id="nome"
-                            class="input"
-                            placeholder="Digite seu nome"
-                            >
-                    </div>
-                    <div class="card-form">
-                        <textarea name="" id=""></textarea>
-                    </div>
-                </form>
+                <article class="card">
+                    <h2 class="sub-titulo">Entre em Contato</h2>
+                    <form class="formulario">
+                        <div class="grupo-form">
+                            <input placeholder="Nome" class="campo-form">
+                        </div>
+                        <div class="grupo-form">
+                            <textarea placeholder="Digite sua mensagem" class="campo-form" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="botao-enviar">Enviar via WhatsApp</button>
+                    </form>
+                </article>
             </section>
         </footer>
     </div>
+    <script src="script/script.js"></script>
 </body>
 </html>

@@ -92,6 +92,7 @@ body {
     border-radius: 50%;
     border: 4px solid var(--vidro);
     box-shadow: 0 0 20px #4f46e599;
+    animation: flutuar 5s ease-in-out infinite; /*Aqui estou dizendo que a foto vai ficar com essa animação em loop infinito por 5seg.*/
 }
 
 #bloco-imagem {
@@ -249,7 +250,7 @@ body {
 }
 
 .card-informacao:hover {
-    box-shadow: 0 10px 20px #4f46e533;
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
     transform: translateY(-10px) scale(1.03); /*Scale significa que o card vai crescer 1.03 quando o hover for ativad50*/
     cursor: pointer;
 }
@@ -264,6 +265,70 @@ body {
     object-fit: cover; /*Vai encaixar a imagem onde eu escolher*/
 }
 
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 2rem;
+    max-width: 800px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vidro);
+    background: #ffffff0d;
+    border-radius: 16px;
+    min-width: 680px;
+}
 
+.campo-form, .botao-enviar{
+    width: 500px;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--vidro);
+    background-color: var(--vidro);
+    color: var(--claro);
+    outline: none; /*Tira o efeito padrão do campos*/
+}
 
+.botao-enviar {
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
 
+.botao-enviar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px #4f46e566;
+}
+
+.campo-form:focus {
+    border-color: var(--primaria);
+    box-shadow: 0 0 10px #4f46e54d;
+}
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /*Deixa esse efeita atrás de todo os outros itens*/
+    opacity: 0.5; /*diminui a opacidade*/
+    background: 
+    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%), radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%), var(--backgroundMaisEscuro); /*Isso serve para dar esse efeito no background*/
+}
+
+@keyframes flutuar { /*Isso é uma animação para fazer flutuar*/
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
