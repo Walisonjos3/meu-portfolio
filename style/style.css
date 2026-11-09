@@ -1,161 +1,356 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --backgroundCards: #ffffff0d;
+    --backgroundInput: #2A1E56;
+    --textoDestaque: #7C3AED;
+    --label: #A78BFA;
+    --corBotaoSemTema: #1E4ED8;
+
+    --primaria: #4F46E5;
+    --secundaria: #7C3AED;
+    --claro: #E2E8F0;
+    --backgroundEscuro: #0F172A;  
+    --backgroundMaisEscuro: #0A0F1C;
+    --vidro: #ffffff1a;
+    --vidroTransparente: #0f172acc;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /*Deixa a scrolagem mais suave*/
 }
 
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    color: #000000;
-    text-align: justify; /*Seria interessante fazer isso??*/
+    background-color: var(--backgroundEscuro);
+    color: var(--claro);
 }
 
-.container {
+.pagina {
+    display: flex;
+    flex-direction: column;
     width: 90%;
-    display: flex;
-    flex-direction: column;
-    border: 3px solid #000000;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.topo {
-    padding: 30px;
-    border-bottom: 3px solid #000000;
+#navegacao {
+    position: fixed; /* Deixa a navegação fixada na tela. */
+    top: 0; /* Garantir que a navegação sempre vai ficar no topo. */
+    left: 0; /* Define o ponto de partida inicial à esquerda */
+    right: 0; /* Junto com left: 0 e margin: auto, isso centraliza elementos fixos */
+    margin: 0 auto; /* Centraliza a barra fixada na tela */
+
+    background-color: var(--vidroTransparente);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    width: 90%; /*Mesma largura da .pagina*/
+    max-width: 1100px;
+    z-index: 100; /*Garante que a navegação sempre vai ficar na frente dos outros itens.*/
+    padding: 1.5rem;
 }
 
-.topo #titulo {
+#menu {
+    /* display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none; */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-}
-
-.topo nav {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.topo div {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-}
-
-img {
-    border-radius: 16px;
-}
-.conteudo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 3px solid #000000;
-}
-
-.fundocard {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 1rem 2rem;
+    list-style: none;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    padding: 30px;
-    flex: 1;
-    gap: 16px;
+#inicio, #sobre, #tecnologias, #projetos, #contato {
+    scroll-margin-top: 100px; /*Isso evita que os títulos das seções fiquem escondidos atrás da navegação fixa quando alguém clicar nos links do menu.*/
 }
 
-.card.borda {
-    border-right: 3px solid #000000;
-    
-}
-
-.comentarios {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    padding: 30px;
-    gap: 8px;
-}
-
-#cards {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    padding: 24px;
-    
-}
-
-.cardcomentarios {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 10px;
-    border: 2px solid #000000;
-    border-radius: 30px;
-    padding: 24px;
-
-}
-
-.lista {
-    margin-left: 20px;
-    list-style-type: none;
-}
-
-.lista.comborda {
-    border-bottom: 3px solid #000000;
-}
-
-.lista.semborda {
-    border-bottom: 0px;
-}
-
-.lista.bolinha {
-    list-style-type: square;
-}
 
 .link {
     text-decoration: none;
-    color: #000000;
-    cursor: pointer;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem;
 }
 
-.link:hover {
-    color: #0000ff;
-    text-decoration: underline;
+.link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0; /*Vai deixar o conteudo para baixo*/
+    left: 0; /*Vai deixar o conteudo para o lado*/
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.5s ease; /*Vai adicioner uma transição de 0.5s toda vez que o width for alterado.*/
 }
 
-.link.especial {
-    color: #0000ff;
+.link:hover::after {
+    width: 100%;
 }
 
-#nome {
-    font-size: x-large;
+#foto-pessoal {
+    width: clamp(180px, 30vw, 300px); /*clamp(valor-mínimo, valor-preferencial, valor-máximo);*/
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+    box-shadow: 0 0 20px #4f46e599;
+    animation: flutuar 5s ease-in-out infinite; /*Aqui estou dizendo que a foto vai ficar com essa animação em loop infinito por 5seg.*/
 }
 
-.rodape {
+#bloco-imagem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.titulo-principal {
+    font-size: 3rem;
+}
+
+.titulo-destaque {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--textoDestaque);
+}
+
+.card-cabecalho {
+    display: flex;
+    justify-content: center;
+    align-items: center; /*Seria melhor utilizar o align-content ?*/
+    gap: 150px;
+    flex: 1 1 150px;
+    flex-wrap: wrap;
+}
+
+.fundo-card {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bolder;
-    padding: 50px;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 300px;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+#icones {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#icones > a {
+    color: var(--claro);
+}
+
+.icone-github, .icone-linkedin, .icone-email {
+    background-color: var(--backgroundCards);
+    border-radius: 10px;
+    padding: 4px;
+    width: 50px;
+    height: 50px;
+    transition: all 0.5s ease;
+    border: 1px solid var(--vidro);
+}
+
+.icone-github:hover, .icone-linkedin:hover, .icone-email:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+}
+
+.sub-titulo {
+    font-size: 2.5rem;
+    color: var(--claro);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.card {
+    padding: 6rem 2rem;
+    max-width: 800px;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    background: #ffffff0d;
+    backdrop-filter: blur(10px);
+}
+
+.card > p {
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+.div-tecnologia {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 50%;
+    gap: 30px;
+}
+
+.fundo-tecnologia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex: 1 1 250px;
+    max-width: 100%;
+    background-color: var(--backgroundEscuro);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.titulo-tecnologias {
+    font-size: 1.3rem;
+}
+
+.icone-tecnologia {
+    border: 1px solid var(--vidro);
+    background: #ffffff0d;
+    border-radius: 16px;
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+    transition: all 0.5s ease;
+}
+
+.icone-tecnologia:hover {
+    transform: translateY(-6px);
+}
+
+.div-icones {
+    display: flex;
+    gap: 30px;
+}
+
+.card-projeto {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.card-informacao {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 200px;
+    max-width: max-content;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vidro);
+    background: #ffffff0d;
+    border-radius: 16px;
+    overflow: hidden; /*Serve para esconder a sobra das imagens*/
+    transition: all 0.5s ease;
+}
+
+.card-informacao:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-10px) scale(1.03); /*Scale significa que o card vai crescer 1.03 quando o hover for ativad50*/
+    cursor: pointer;
+}
+
+.card-projeto-texto {
+    padding: 1rem;
+}
+.imagem-projeto {
+    background-color: var(--claro);
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /*Vai encaixar a imagem onde eu escolher*/
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 680px;
+    min-width: 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--vidro);
+    background: #ffffff0d;
+    border-radius: 16px;
+}
+
+.grupo-form {
+    width: 100%;
+}
+
+.campo-form, .botao-enviar{
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--vidro);
+    background-color: var(--vidro);
+    color: var(--claro);
+    outline: none; /*Tira o efeito padrão do campos*/
+}
+
+.botao-enviar {
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.botao-enviar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px #4f46e566;
+}
+
+.campo-form:focus {
+    border-color: var(--primaria);
+    box-shadow: 0 0 10px #4f46e54d;
+}
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /*Deixa esse efeita atrás de todo os outros itens*/
+    opacity: 0.5; /*diminui a opacidade*/
+    background: 
+    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%), radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%), var(--backgroundMaisEscuro); /*Isso serve para dar esse efeito no background*/
+}
+
+@keyframes flutuar { /*Isso é uma animação para fazer flutuar*/
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
