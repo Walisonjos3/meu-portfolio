@@ -12,3 +12,23 @@ function enviarWhatsApp(event) { // Função para verificar o click do botao.
     const url = `https://wa.me/${telefone}?text=${mensagemFormatada}`; // url da minha mensagem.
     window.open(url, '_blank') // Isso vai abrir a url em uma nova janela.
 }
+
+const body = document.body;
+const botaoTema = document.querySelector('#botao-tema');
+
+const temaSalvo = localStorage.getItem('tema');
+if(temaSalvo === 'claro') {
+    body.classList.add('tema-claro');
+};
+
+botaoTema.addEventListener('click', () => {
+    body.classList.toggle('tema-claro');
+
+    // Verifica qual tema está ativo no momento e salva no localStorage
+    if (body.classList.contains('tema-claro')) {
+        localStorage.setItem('tema', 'claro');
+        
+    } else {
+        localStorage.setItem('tema', 'escuro');
+    }
+});

@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
+    --backgroundTemaClaro: #F3F7FB;
     --backgroundCards: #ffffff0d;
     --backgroundInput: #2A1E56;
     --textoDestaque: #7C3AED;
     --label: #A78BFA;
     --corBotaoSemTema: #1E4ED8;
+    --corBorda: #dbe4f0;
+    --textosTemaClaro: #1f2937;
+    --textoBotao: #FFFFFF;
+    --vidroAzul: #1e4ed8cc;
 
     --primaria: #4F46E5;
     --secundaria: #7C3AED;
@@ -61,10 +66,6 @@ body {
 }
 
 #menu {
-    /* display: flex;
-    justify-content: center;
-    gap: 3rem;
-    list-style: none; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,7 +194,7 @@ body {
     max-width: 800px;
     border-radius: 16px;
     border: 1px solid var(--vidro);
-    background: #ffffff0d;
+    background: var(--backgroundCards);
     backdrop-filter: blur(10px);
 }
 
@@ -228,7 +229,7 @@ body {
 
 .icone-tecnologia {
     border: 1px solid var(--vidro);
-    background: #ffffff0d;
+    background: var(--backgroundCards);
     border-radius: 16px;
     padding: 10px;
     width: 70px;
@@ -239,6 +240,28 @@ body {
 .icone-tecnologia:hover {
     transform: translateY(-6px);
 }
+
+#botao-tema {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.icone-sol, .icone-lua {
+    color: var(--claro);
+}
+
+.icone-sol {
+    display: block;
+}
+
+.icone-lua {
+    display: none;
+}
+
 
 .div-icones {
     display: flex;
@@ -261,7 +284,7 @@ body {
     max-width: max-content;
     backdrop-filter: blur(10px);
     border: 1px solid var(--vidro);
-    background: #ffffff0d;
+    background: var(--backgroundCards);
     border-radius: 16px;
     overflow: hidden; /*Serve para esconder a sobra das imagens*/
     transition: all 0.5s ease;
@@ -295,7 +318,7 @@ body {
     min-width: 0;
     backdrop-filter: blur(10px);
     border: 1px solid var(--vidro);
-    background: #ffffff0d;
+    background: var(--backgroundCards);
     border-radius: 16px;
 }
 
@@ -315,7 +338,7 @@ body {
 }
 
 .botao-enviar {
-    color: var(--claro);
+    color: var(--textoBotao);
     background: linear-gradient(45deg, var(--primaria), var(--secundaria));
     padding: 1rem 2rem;
     border: none;
@@ -345,6 +368,171 @@ body {
     opacity: 0.5; /*diminui a opacidade*/
     background: 
     radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%), radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%), var(--backgroundMaisEscuro); /*Isso serve para dar esse efeito no background*/
+}
+
+.titulo-projeto {
+    color: var(--claro);
+}
+
+/* Fundo geral branco e texto base escuro */
+body.tema-claro {
+    background-color: var(--backgroundTemaClaro);
+    color: var(--textosTemaClaro);
+}
+
+/* Partículas suaves sobre o fundo branco */
+body.tema-claro .card {
+    background-color: var(--corBotaoSemTema);
+    border-color: var(--corBorda);
+}
+
+body.tema-claro .particulas {
+    opacity: 0.15;
+    background: 
+        radial-gradient(circle at 10% 20%, var(--corBotaoSemTema) 0%, transparent 25%),
+        radial-gradient(circle at 90% 80%, var(--primaria) 0%, transparent 25%),
+        #FFFFFF;
+}
+
+/* Menu fixo translúcido claro */
+body.tema-claro #navegacao {
+    background-color: var(--vidroAzul);
+    border: 1px solid #ffffff40;
+    box-shadow: 0 8px 20px #0f172a26;
+}
+
+body.tema-claro .link {
+    color: var(--textoBotao);
+}
+
+body.tema-claro .link::after {
+    background: var(--textoBotao);
+}
+
+/* Ícones do botão de tema esconde o sol, mostra a lua escura*/
+body.tema-claro .icone-sol {
+    display: none;
+}
+
+body.tema-claro .icone-lua {
+    display: block;
+    color: var(--textoBotao);
+}
+
+/* Seção Início (texto direto no fundo branco) */
+body.tema-claro .titulo-principal,
+body.tema-claro #bloco-imagem h2 {
+    color: var(--backgroundEscuro);
+}
+
+body.tema-claro .titulo-destaque {
+    color: var(--corBotaoSemTema);
+}
+
+body.tema-claro #inicio p {
+    color: var(--textosTemaClaro);
+}
+
+body.tema-claro #icones > a {
+    color: var(--backgroundEscuro);
+}
+
+body.tema-claro .icone-github,
+body.tema-claro .icone-linkedin,
+body.tema-claro .icone-email {
+    background-color: var(--backgroundTemaClaro);
+    border-color: var(--corBorda);
+}
+
+body.tema-claro #foto-pessoal {
+    border-color: var(--corBorda);
+}
+
+/* Seção Sobre (Card azul com textos e título brancos) */
+body.tema-claro #sobre .card {
+    background-color: var(--corBotaoSemTema);
+    border-color: var(--corBotaoSemTema);
+}
+
+body.tema-claro #sobre .sub-titulo,
+body.tema-claro #sobre p {
+    color: var(--textoBotao);
+}
+
+/* Seção Tecnologias (Card externo claro para contraste + blocos internos azuis) */
+body.tema-claro #tecnologias .card {
+    background-color: var(--backgroundTemaClaro);
+    border-color: var(--corBorda);
+}
+
+body.tema-claro #tecnologias .sub-titulo {
+    color: var(--backgroundEscuro);
+}
+
+body.tema-claro .fundo-tecnologia {
+    background-color: var(--corBotaoSemTema);
+}
+
+body.tema-claro .titulo-tecnologias {
+    color: var(--textoBotao);
+}
+
+body.tema-claro .icone-tecnologia {
+    background-color: #ffffffb5;
+    border-color: transparent;
+}
+
+/* Seção Projetos (Branco com preto/cinza escuro) */
+body.tema-claro #projetos .card {
+    background-color: var(--backgroundTemaClaro);
+    border-color: var(--corBorda);
+}
+
+body.tema-claro #projetos .sub-titulo {
+    color: var(--backgroundEscuro);
+}
+
+body.tema-claro .card-informacao {
+    background-color: #FFFFFF;
+    border-color: var(--corBorda);
+}
+
+body.tema-claro .titulo-projeto {
+    color: var(--backgroundEscuro);
+}
+
+body.tema-claro .card-projeto-texto p {
+    color: var(--textosTemaClaro);
+}
+
+/* Seção Contato (Card e formulário claros com botão azul) */
+body.tema-claro #contato .card {
+    background-color: var(--backgroundTemaClaro);
+    border-color: var(--corBorda);
+}
+
+body.tema-claro #contato .sub-titulo {
+    color: var(--backgroundEscuro);
+}
+
+body.tema-claro .formulario {
+    background-color: #FFFFFF;
+    border-color: var(--corBorda);
+}
+
+body.tema-claro .campo-form {
+    background-color: var(--backgroundTemaClaro);
+    border-color: var(--corBorda);
+    color: var(--backgroundEscuro);
+}
+
+body.tema-claro .campo-form::placeholder {
+    color: #64748b;
+}
+
+body.tema-claro .botao-enviar {
+    background: var(--corBotaoSemTema);
+    color: var(--textoBotao);
 }
 
 @keyframes flutuar { /*Isso é uma animação para fazer flutuar*/
